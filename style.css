@@ -25,13 +25,13 @@ h3, h4{
 
 }
 
-h1, h2, a{
+h1, h2,{
     background-color: aqua;
     color: white;
     text-align: center;
 }
 
-li{
+li, .maggi{
     font-size: 20px;
     text-align: left;
     text-decoration: none;
@@ -41,6 +41,20 @@ li{
 a{ 
     text-decoration: none;
     font-size: 70px;
-    background-color: blue;
     text-align: center;
+    width: 99%;
+    color: rgb(255, 255, 255);
+}
+.maggi{
+    background-color: black;
+    color: yellow;
+
+}
+button, .nav{
+    width: 49%;
+    display: inline-block;
+    background-color: rgb(180, 82, 82);
+}
+.nav{
+    color: black;
 }
