@@ -76,6 +76,5 @@ li a img {
 }
 
 iframe {
-  margin-left: 400px;
-  margin-bottom: 100px;
+  margin: 0 auto;
 }
