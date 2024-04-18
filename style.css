@@ -1,86 +1,90 @@
-/* body {
-  background: linear-gradient(
-      0deg,
-      rgba(36, 36, 36, 0.54),
-      rgba(34, 34, 34, 0.69)
-    ),
-    url(images/Greece-2560x1300.jpg);
-  color: #fafafa;
-  font-family: Arial, Helvetica, sans-serif;
-  background-size: cover;
+*,
+:before,
+:after {
   box-sizing: border-box;
-  border: 10px solid rgb(0, 0, 0);
-  margin: 0px;
-  height: 100vh;
 }
 
-h1 {
-  font-size: 60px;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  width: 100%;
+  color: #fafafa;
 }
 
-h2 {
-  font-size: 40px;
-}
-h3 {
-  font-size: 35px;
-}
-h4 {
-  font-size: 25px;
-}
-h1,
-h2,
-h3,
-h4 {
-  text-align: center;
+/* 
+  Header
+*/
+
+header {
+  background-color: #232828;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-li,
-.maggi {
-  font-size: 20px;
-  text-align: left;
-  text-decoration: none;
-  margin-bottom: 20px;
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-a {
-  text-decoration: none;
-  font-size: 70px;
-  text-align: center;
-  width: 99%;
-  color: rgb(255, 255, 255);
-}
-.maggi {
-  background-color: black;
-  color: yellow;
-}
-button,
-.nav {
-  width: 49%;
-  display: inline-block;
-  background-color: rgb(180, 82, 82);
-}
-.nav {
-  color: black;
-}
-
-li a img {
-  display: inline-block;
-  width: 300px;
-  height: 300px;
-  border: 5px solid black;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-}
-
-.home-ul {
+.header-flexbox {
   display: flex;
-  justify-content: space-evenly;
-  list-style: none;
-  margin-top: 50px;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 15px 0;
 }
 
-iframe {
-  margin-left: 400px;
-  margin-bottom: 100px;
-} */
+.logo-wrapper {
+  flex: 0 0 25%;
+}
+
+.logo-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  box-shadow: 0 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.main-nav {
+  flex: 0 0 75%;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+.nav-list li a {
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  transition: all 0.3s;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-list li a:hover {
+  color: rgb(222, 222, 222);
+  border-bottom: 2px solid rgb(201, 201, 201);
+}
+
+/* 
+  end of Header
+*/
+
+/* 
+  Main
+*/
+
+main {
+  background-color: #232828;
+}
