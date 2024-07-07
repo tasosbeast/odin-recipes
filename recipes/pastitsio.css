@@ -12,7 +12,6 @@ body {
   line-height: 1.5;
   width: 100%;
   color: #fafafa;
-  height: 100vh;
 }
 
 a {
@@ -25,7 +24,7 @@ a {
 */
 
 main {
-  background-color: hsl(38, 50%, 66%);
+  background-color: hsl(0, 0%, 11%);
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -37,45 +36,30 @@ main {
   font-family: "UnifrakturMaguntia", cursive;
   font-size: 3rem;
   text-align: center;
-  margin: 0 0 20px 0;
+  margin: 0 0 10px 0;
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-  color: #232828;
-}
-
-.recipes {
-  background-color: hsl(205, 52%, 85%);
-  border-radius: 10px;
-  overflow: hidden;
-  max-width: 900px;
-  width: 900px;
-  margin: 0 auto;
-  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.8);
-  color: #232828;
+  color: #e4e4e4;
 }
 
 .pastitsio-container {
-  background-color: hsl(197, 53%, 29%);
-  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.8);
-  padding: 20px;
-  border-radius: 10px;
+  padding: 30px;
 }
 
 .pastitsio {
   background: url("../images/Pastitsio-_4-SQ.jpg") no-repeat center center/cover;
   margin: 0 auto;
-  width: 450px;
-  height: 500px;
-  border-radius: 10px;
+  width: 650px;
+  height: 650px;
+  border-radius: 1000px;
   transition: transform 0.3s;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
-.recipes-content {
-  text-align: center;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
 }
 
 .recipes-content-flexbox {
   display: flex;
+  gap: 120px;
+
+  align-items: flex-start;
 }
 
 .ingredients,
@@ -83,10 +67,9 @@ main {
   padding: 20px;
   flex: 1;
   text-align: left;
-  background-color: hsl(197, 13%, 89%);
+
   border-radius: 10px;
-  margin: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  margin: 40px;
 }
 
 .ingredients h3,
@@ -95,19 +78,14 @@ main {
   text-align: center;
 }
 
-.steps {
-  padding: 20px;
-  flex: 1;
-}
-
 .ingredients-list-item {
   color: #e8e8e8;
-  padding: 0 16px 10px;
-  margin: 0 auto 10px;
+  padding: 7px 10px;
+  margin-bottom: 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: hsl(197, 53%, 29%);
-  border-radius: 10px;
+  border-radius: 40px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
