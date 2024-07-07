@@ -20,6 +20,8 @@ By the end of this project, I will have demonstrated the following skills:
 ## Project Structure
 
 The project will have the following structure:
+
+```
 /odin-recipes
 │
 ├── index.html
@@ -32,6 +34,7 @@ The project will have the following structure:
 ├── recipe1.jpg
 ├── recipe2.jpg
 └── recipe3.jpg
+```
 
 - **index.html**: The main landing page that links to individual recipe pages.
 - **recipes/**: A directory containing individual HTML files for each recipe.
