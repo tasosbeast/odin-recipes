@@ -50,8 +50,8 @@ main {
 .pastitsio {
   background: url("../images/Pastitsio-_4-SQ.jpg") no-repeat center center/cover;
   margin: 0 auto;
-  width: 650px;
-  height: 650px;
+  width: 450px;
+  height: 450px;
   border-radius: 1000px;
   transition: transform 0.3s;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
@@ -64,8 +64,11 @@ main {
 }
 
 .pastitsio-container p {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
+  line-height: 1.5;
   text-align: center;
+  max-width: 70%;
+  margin: 30px auto;
 }
 
 .recipes-content-flexbox {
@@ -123,4 +126,10 @@ main {
 
 .button:hover {
   background-color: hsl(197, 53%, 19%);
+}
+
+.key-features-list {
+  list-style: none;
+  text-align: center;
+  font-size: 1.5rem;
 }
