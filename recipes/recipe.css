@@ -41,6 +41,11 @@ main {
   color: #e4e4e4;
 }
 
+.recipe__content {
+  position: relative;
+  width: 100vw;
+}
+
 .recipe__hero {
   padding: 30px;
   max-width: 1000px;
@@ -78,9 +83,14 @@ main {
   align-items: flex-start;
 }
 
+.recipe__features {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
 .recipe__features-list {
   list-style: none;
-  text-align: center;
+
   font-size: 1.5rem;
 }
 .ingredients,
@@ -113,23 +123,39 @@ main {
 }
 
 .navigation {
+  position: fixed;
+  bottom: 30px;
+  width: 100%;
   display: flex;
-  justify-content: center;
-  margin-top: 20px;
+  justify-content: space-between;
+  padding: 0 20px;
 }
 
 .navigation__button {
-  display: inline-block;
-  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 5px;
-  background-color: hsl(197, 53%, 29%);
-  color: white;
+  background-color: #f09e2e;
+  color: hsl(0, 0%, 11%);
   text-align: center;
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 5000px;
   transition: background-color 0.3s;
+  width: 70px;
+  height: 70px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .navigation__button:hover {
   background-color: hsl(197, 53%, 19%);
+  color: #e4e4e4;
+}
+
+.navigation__button--left {
+  left: 20px;
+}
+
+.navigation__button--right {
+  right: 20px;
 }
