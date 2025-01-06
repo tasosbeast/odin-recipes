@@ -25,39 +25,70 @@ a {
 */
 
 main {
-  background-color: #232828;
-  padding: 20px;
-  height: 100vh;
+  background: linear-gradient(135deg, #232828 0%, #1a1a1a 100%);
+  min-height: 100vh;
+  padding: 40px 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
+.header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
 .main-title {
   font-family: "UnifrakturMaguntia", cursive;
   font-size: 4rem;
   text-align: center;
-  margin: 0 0 20px 0;
+  margin: 0 0 10px 0; /* Reduce bottom margin */
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  animation: fadeInDown 1s ease-out;
+  position: relative;
+}
+
+.main-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #f09e2e, transparent);
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #f09e2e;
+  margin: 0;
+  opacity: 0.9;
+  font-style: italic;
+  animation: fadeIn 1s ease-out 0.3s backwards;
 }
 
 .container {
-  width: 1200px;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
 }
 
 .recipes {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
   justify-content: center;
+  animation: fadeIn 1s ease-out 0.5s backwards;
+  width: 100%;
 }
 
 .recipe-card {
-  background-color: #ffffff;
-  border-radius: 10px;
-  width: 300px;
-  height: 300px; /* Set consistent height */
+  background-color: transparent;
+  border-radius: 12px;
+  width: 100%;
+  min-height: 300px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   transition: transform 0.3s, box-shadow 0.3s;
   position: relative;
@@ -65,12 +96,13 @@ main {
 }
 
 .recipe-card.pastitsio {
-  background: url("./images/Pastitsio-_4-SQ.jpg") center/cover no-repeat;
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 1) 100%),
+    url("./images/Pastitsio-_4-SQ.jpg") center/cover no-repeat;
 }
 
 .recipe-card.souffle {
-  background: url("./images/εύκολο-σουφλέ-ζυμαρικών-930x620.jpg") center/cover
-    no-repeat;
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 1) 100%),
+    url("./images/εύκολο-σουφλέ-ζυμαρικών-930x620.jpg") center/cover no-repeat;
 }
 
 .recipe-card:hover {
@@ -83,10 +115,20 @@ main {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(44, 44, 44, 0.8);
+  background: rgba(26, 26, 26, 0.9); /* Make slightly more transparent */
+  backdrop-filter: blur(4px);
   padding: 15px;
-  text-align: center;
-  margin-top: 0; /* Remove margin */
+  margin: 0; /* Remove any margin */
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  z-index: 1; /* Ensure content stays above background */
+  will-change: transform;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.recipe-card:hover .recipe-content {
+  transform: translateY(0);
 }
 
 .recipe-content h2 {
@@ -110,5 +152,62 @@ main {
 
   .recipe-card {
     width: 90%;
+    min-height: 250px;
+  }
+
+  .main-title {
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .header {
+    margin-bottom: 40px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .main-title {
+    font-size: 3rem;
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Add responsive hover effects for touch devices */
+@media (hover: hover) {
+  .recipe-content {
+    transform: translateY(50%);
+  }
+
+  .recipe-content p {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .recipe-card:hover .recipe-content p {
+    opacity: 1;
   }
 }
