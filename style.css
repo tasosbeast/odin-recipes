@@ -48,61 +48,67 @@ main {
 
 .recipes {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
   gap: 20px;
+  justify-content: center;
+}
+
+.recipe-card {
   background-color: #ffffff;
   border-radius: 10px;
-  padding: 20px;
-  max-width: 80%;
-  height: 500px;
-  margin: 0 auto;
-  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.8);
-}
-
-.recipes div {
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
-  transition: transform 0.3s;
+  width: 300px;
+  height: 300px; /* Set consistent height */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
 }
 
-.pastitsio {
-  background: url("./images/Pastitsio-_4-SQ.jpg") no-repeat center center/cover;
+.recipe-card.pastitsio {
+  background: url("./images/Pastitsio-_4-SQ.jpg") center/cover no-repeat;
 }
 
-.pastitsio:hover,
-.souffle:hover {
-  transform: scale(1.1);
+.recipe-card.souffle {
+  background: url("./images/εύκολο-σουφλέ-ζυμαρικών-930x620.jpg") center/cover
+    no-repeat;
 }
 
-.pastitsio-content,
-.souffle-content {
-  background-color: rgba(44, 44, 44, 0.5);
-  border-radius: 10px;
-  padding: 10px;
+.recipe-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+}
+
+.recipe-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(44, 44, 44, 0.8);
+  padding: 15px;
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  opacity: 0;
-  transition: all 1.5s linear;
+  margin-top: 0; /* Remove margin */
 }
 
-.pastitsio-content:hover,
-.souffle-content:hover {
-  opacity: 1;
-}
-
-.pastitsio-content h2,
-.souffle-content h2 {
-  padding: 0;
-  margin: 0;
+.recipe-content h2 {
+  margin: 0 0 8px 0; /* Add bottom margin to heading */
   color: #fff;
+  font-size: 1.5rem;
 }
 
-.souffle {
-  background: url("./images/εύκολο-σουφλέ-ζυμαρικών-930x620.jpg") no-repeat
-    center center/cover;
+.recipe-content p {
+  color: #fff;
+  margin: 0; /* Remove default paragraph margin */
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+  }
+
+  .recipe-card {
+    width: 90%;
+  }
 }
