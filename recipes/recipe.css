@@ -24,48 +24,99 @@ a {
 */
 
 main {
-  background-color: hsl(0, 0%, 11%);
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  background-color: #1a1a1a;
+  min-height: 100vh;
+  padding: 40px 20px;
 }
 
 .recipe__title {
   font-family: "UnifrakturMaguntia", cursive;
-  font-size: 3rem;
+  font-size: 4rem;
   text-align: center;
-  margin: 0 0 10px 0;
+  margin: 0 auto 2rem;
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-  color: #e4e4e4;
+  color: #f8f8f8;
+  width: 100%;
+  max-width: 800px;
 }
 
 .recipe__content {
   position: relative;
-  width: 100vw;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .recipe__hero {
-  padding: 30px;
-  max-width: 1000px;
+  padding: 30px 0;
+  max-width: 800px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 0.8s ease-in;
+  position: relative;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 30px;
+  padding: 40px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 
 .recipe__image {
-  background: url("../images/Pastitsio-_4-SQ.jpg") no-repeat center center/cover;
   margin: 0 auto;
-  width: 450px;
-  height: 450px;
-  border-radius: 1000px;
-  transition: transform 0.3s;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  width: 400px;
+  height: 400px;
+  border-radius: 20px;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  display: block;
+  position: relative;
+}
+
+.recipe__image--pastitsio {
+  background: url("../images/Pastitsio-_4-SQ.jpg") no-repeat center center/cover;
+}
+
+.recipe__image--souffle {
+  background: url("../images/εύκολο-σουφλέ-ζυμαρικών-930x620.jpg") no-repeat
+    center center/cover;
+}
+
+.recipe__image:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.recipe__image::after {
+  content: "";
+  position: absolute;
+  inset: -10px;
+  border: 2px solid rgba(240, 158, 46, 0.3);
+  border-radius: 25px;
+  z-index: -1;
 }
 
 .recipe__heading {
-  font-size: 2rem;
+  font-size: 2.5rem;
   text-align: center;
-  margin: 60px 0;
+  margin: 40px 0 20px;
+  color: #f09e2e;
+  font-weight: 600;
+  animation: slideIn 0.6s ease-out;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.recipe__heading::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: #f09e2e;
+  border-radius: 2px;
 }
 
 .recipe__hero p {
@@ -76,29 +127,63 @@ main {
   margin: 30px auto;
 }
 
-.recipe__details-container {
-  display: flex;
-  gap: 120px;
+.recipe__description {
+  color: #e0e0e0;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 40px;
+  animation: slideIn 0.8s ease-out;
+}
 
-  align-items: flex-start;
+.recipe__details-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 30px;
+  padding: 40px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 
 .recipe__features {
-  max-width: 400px;
   margin: 0 auto;
 }
 
 .recipe__features-list {
   list-style: none;
-
-  font-size: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  padding: 0;
+  margin-top: 40px;
+  margin: 30px 0;
 }
+
+.recipe__features-list li {
+  background: linear-gradient(
+    145deg,
+    rgba(240, 158, 46, 0.1),
+    rgba(240, 158, 46, 0.05)
+  );
+  padding: 15px 20px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(240, 158, 46, 0.2);
+  padding: 20px;
+}
+
 .ingredients,
 .steps {
   padding: 20px;
   flex: 1;
   text-align: left;
-
   border-radius: 10px;
   margin: 40px;
 }
@@ -112,50 +197,192 @@ main {
 .ingredients__item,
 .steps__item {
   color: #e8e8e8;
-  padding: 7px 10px;
-  margin-bottom: 10px;
+  padding: 15px 20px;
+  margin-bottom: 15px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: hsl(197, 53%, 29%);
-  border-radius: 40px;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.02)
+  );
+  border-radius: 12px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.2s, background 0.2s;
+  animation: fadeIn 0.5s ease-out;
+  animation-fill-mode: both;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.steps__item {
+  position: relative;
+  padding-left: 60px;
+}
+
+.steps__item::before {
+  content: counter(step);
+  counter-increment: step;
+  position: absolute;
+  left: 20px;
+  color: #f09e2e;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* Add animation delay for list items to create a cascade effect */
+.ingredients__item:nth-child(n),
+.steps__item:nth-child(n) {
+  animation-delay: calc(0.1s * var(--i, 1));
+}
+
+.ingredients__item:hover,
+.steps__item:hover {
+  background: rgba(240, 158, 46, 0.1);
+  transform: translateX(5px);
+}
+
+.ingredients__title,
+.steps__title {
+  color: #f09e2e;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.ingredients__title::before,
+.steps__title::before {
+  content: "👩‍🍳";
+  margin-right: 10px;
+  font-size: 2rem;
 }
 
 .navigation {
   position: fixed;
-  bottom: 30px;
-  width: 100%;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(100%, 1200px); /* Limit maximum width */
   display: flex;
   justify-content: space-between;
-  padding: 0 20px;
+  padding: 0 40px;
+  pointer-events: none; /* This allows clicking through the navigation container */
 }
 
 .navigation__button {
+  pointer-events: auto; /* Re-enable clicking for buttons */
+  width: 70px;
+  height: 70px;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 5px;
-  background-color: #f09e2e;
-  color: hsl(0, 0%, 11%);
+  background: rgba(240, 158, 46, 0.7);
+  color: #1a1a1a;
+  border-radius: 50%;
+  font-size: 0.9rem;
+  font-weight: bold;
   text-align: center;
-  text-decoration: none;
-  border-radius: 5000px;
-  transition: background-color 0.3s;
-  width: 70px;
-  height: 70px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  opacity: 0.8;
 }
 
 .navigation__button:hover {
-  background-color: hsl(197, 53%, 19%);
-  color: #e4e4e4;
+  background: #f09e2e;
+  transform: scale(1.1);
+  opacity: 1;
 }
 
-.navigation__button--left {
-  left: 20px;
-}
-
+/* Remove the left/right specific positioning as it's handled by flex now */
+.navigation__button--left,
 .navigation__button--right {
-  right: 20px;
+  position: static;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .recipe__title {
+    font-size: 3rem;
+  }
+
+  .recipe__image {
+    width: 250px;
+    height: 250px;
+  }
+
+  .recipe__details-container {
+    grid-template-columns: 1fr;
+  }
+
+  .navigation {
+    width: 100%;
+    padding: 0 20px; /* Smaller padding on mobile */
+  }
+
+  .navigation__button {
+    width: 50px; /* Slightly smaller on mobile */
+    height: 50px;
+  }
+
+  .recipe__content {
+    padding: 0 15px;
+  }
+
+  .recipe__hero,
+  .recipe__details-container {
+    padding: 20px;
+    border-radius: 20px;
+  }
+
+  .recipe__features-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Add counters for steps */
+.steps {
+  counter-reset: step;
+}
+
+/* Additional decorative elements */
+.recipe::before,
+.recipe::after {
+  content: "•••";
+  font-size: 2rem;
+  color: #f09e2e;
+  opacity: 0.5;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.recipe::before {
+  top: 20px;
+}
+
+.recipe::after {
+  bottom: 20px;
 }
