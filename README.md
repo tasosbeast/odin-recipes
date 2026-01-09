@@ -7,3 +7,6 @@ Feel free to explore and try them out in your kitchen!
 Final assigment for the HTML section of [The Odin Project](https://www.theodinproject.com/).
 
 Spec and details for the assignment can be found [here](https://www.theodinproject.com/lessons/foundations-recipes).
+
+
+credits for the dish image to : - Dotdash Meredith Food Studios
