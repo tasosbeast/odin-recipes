@@ -12,7 +12,7 @@ u can find the live version of the project [here](https://tasosbeast.github.io/o
 
 ## Screenshot
 
-![screenshot](./images/screenshot-recipes.png)
+![screenshot](./images/screenshot-recipe.png)
 
 ## Credits
 
