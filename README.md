@@ -8,7 +8,7 @@ Final assigment for the HTML section of [The Odin Project](https://www.theodinpr
 
 Spec and details for the assignment can be found [here](https://www.theodinproject.com/lessons/foundations-recipes).
 
-u can find the live version of the project [here](https://tasosbeast.github.io/odin-recipes/).
+u can find the live version of the project [here](https://spiffy-madeleine-46b849.netlify.app/).
 
 ## Screenshot
 
