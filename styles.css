@@ -45,3 +45,22 @@ li {
   scale: 1.2;
   opacity: 0.5;
 }
+
+.recipe {
+  height: 200px;
+}
+
+.recipe-1 {
+  background: linear-gradient(rgba(0, 0, 0, 0.553), rgba(0, 0, 0, 0.553)),
+    url("./images/chicken soup.webp") center/cover no-repeat;
+}
+
+.recipe-2 {
+  background: linear-gradient(rgba(0, 0, 0, 0.553), rgba(0, 0, 0, 0.553)),
+    url(./images/shrimp-pasta.webp) center/cover no-repeat;
+}
+
+.recipe-3 {
+  background: linear-gradient(rgba(0, 0, 0, 0.553), rgba(0, 0, 0, 0.553)),
+    url(./images/gnocchi.webp) center/cover no-repeat;
+}
