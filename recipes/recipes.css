@@ -37,6 +37,7 @@ ol {
   list-style: decimal;
   list-style-position: outside;
   padding-left: 10px;
+  margin-bottom: 50px;
 }
 
 ul {
@@ -98,6 +99,7 @@ ul li::before {
   margin: 0 auto;
   padding: 10px 20px;
   margin-top: -300px;
+  margin-bottom: 50px;
   background-color: rgba(0, 0, 0, 0.502);
   border-radius: 30px;
   backdrop-filter: blur(20px); /* main magic */
