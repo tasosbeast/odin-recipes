@@ -11,3 +11,13 @@ body {
     rgba(28, 28, 28, 1) 50%
   );
 }
+body {
+  font-family: "Holtwood One SC", serif;
+  color: #ffffff;
+}
+
+.main-title {
+  text-align: center;
+  font-size: 80px;
+  color: #e3b261;
+}
