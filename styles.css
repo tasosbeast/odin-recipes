@@ -3,3 +3,11 @@
 * {
   box-sizing: border-box;
 }
+
+body {
+  background: linear-gradient(
+    90deg,
+    rgba(12, 12, 12, 1) 50%,
+    rgba(28, 28, 28, 1) 50%
+  );
+}
