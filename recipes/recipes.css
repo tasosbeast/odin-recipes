@@ -92,15 +92,15 @@ ul li::before {
 }
 
 .recipe-image1 {
-  background: url(../images/chicken\ soup.webp) center/cover;
+  background: url(../images/chicken\ soup.webp) center / cover;
 }
 
 .recipe-image2 {
-  background: url(../images/shrimp-pasta.webp) center/cover;
+  background: url(../images/shrimp-pasta.webp) center / cover;
 }
 
 .recipe-image3 {
-  background: url(../images/gnocchi.webp) center/cover;
+  background: url(../images/gnocchi.webp) center / cover;
 }
 
 .recipe-content {
